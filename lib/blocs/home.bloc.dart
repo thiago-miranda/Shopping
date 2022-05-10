@@ -1,9 +1,11 @@
+import 'package:flutter/widgets.dart';
+
 import '../models/category-list-item.model.dart';
 import '../models/product-list-item.model.dart';
 import '../repositories/category.repository.dart';
 import '../repositories/product.repository.dart';
 
-class HomeBloc {
+class HomeBloc extends ChangeNotifier {
   final categoryRepository = CategoryRepository();
   final productRepository = ProductRepository();
 
@@ -19,12 +21,14 @@ class HomeBloc {
   getCategories() {
     categoryRepository.getAll().then((data) {
       categories = data;
+      notifyListeners();
     });
   }
 
   getProducts() {
     productRepository.getAll().then((data) {
       products = data;
+      notifyListeners();
     });
   }
 
@@ -32,11 +36,13 @@ class HomeBloc {
     productRepository
         .getByCategory(selectedCategory)
         .then((data) => products = data);
+    notifyListeners();
   }
 
   changeCategory(tag) {
     selectedCategory = tag;
     products = null;
     getProductsByCategory();
+    notifyListeners();
   }
 }
