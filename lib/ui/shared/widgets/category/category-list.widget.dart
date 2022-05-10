@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:shopping/ui/shared/widgets/shared/loader.widget.dart';
 
 import '../../../../models/category-list-item.model.dart';
@@ -14,7 +12,7 @@ class CategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 90,
       child: Loader(object: categories, callback: list),
     );
