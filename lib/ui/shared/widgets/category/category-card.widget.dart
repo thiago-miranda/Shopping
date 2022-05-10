@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shopping/blocs/home.bloc.dart';
 import 'package:shopping/models/category-list-item.model.dart';
 import 'package:provider/provider.dart';

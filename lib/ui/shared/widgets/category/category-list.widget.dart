@@ -14,7 +14,10 @@ class CategoryList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 90,
-      child: Loader(object: categories, callback: list),
+      child: Loader(
+        object: categories,
+        callback: list,
+      ),
     );
   }
 
