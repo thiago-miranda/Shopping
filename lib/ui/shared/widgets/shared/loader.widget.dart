@@ -3,8 +3,9 @@ import 'package:flutter/widgets.dart';
 import '../shared/progress-indicator.widget.dart';
 
 class Loader extends StatelessWidget {
-  final object;
+  final dynamic object;
   final Function callback;
+
   const Loader({Key? key, required this.object, required this.callback})
       : super(key: key);
 

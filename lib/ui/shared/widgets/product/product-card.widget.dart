@@ -60,7 +60,7 @@ class ProductCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                SizedBox(
                   width: 120,
                   child: Text(
                     "R\$ ${price.format(item.price)}",

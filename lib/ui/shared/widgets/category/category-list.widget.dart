@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 
 class CategoryList extends StatelessWidget {
-  final List<CategoryListItemModel> categories;
+  final List<CategoryListItemModel>? categories;
   const CategoryList({Key? key, required this.categories}) : super(key: key);
 
   @override
@@ -24,9 +24,9 @@ class CategoryList extends StatelessWidget {
   Widget list() {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
-      itemCount: categories.length,
+      itemCount: categories!.length,
       itemBuilder: (context, index) {
-        CategoryListItemModel item = categories[index];
+        CategoryListItemModel item = categories![index];
         return Padding(
           padding: const EdgeInsets.all(5),
           child: CategoryCard(

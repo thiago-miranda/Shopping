@@ -10,7 +10,7 @@ class HomeBloc extends ChangeNotifier {
   final productRepository = ProductRepository();
 
   List<ProductListItemModel>? products;
-  List<CategoryListItemModel> categories = [];
+  List<CategoryListItemModel>? categories;
   String selectedCategory = 'todos';
 
   HomeBloc() {
