@@ -47,26 +47,28 @@ class HomePage extends StatelessWidget {
     final HomeBloc bloc = Provider.of<HomeBloc>(context);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(height: 60),
-            Text(
-              "Categorias",
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: 10),
-            CategoryList(categories: bloc.categories),
-            const SizedBox(height: 10),
-            Text(
-              "Mais Vendidos",
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: 10),
-            ProductList(products: bloc.products),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const SizedBox(height: 60),
+              Text(
+                "Categorias",
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 10),
+              CategoryList(categories: bloc.categories),
+              const SizedBox(height: 10),
+              Text(
+                "Mais Vendidos",
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 10),
+              ProductList(products: bloc.products),
+            ],
+          ),
         ),
       ),
     );
